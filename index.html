@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Fukusuke Sushi</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+	<!--NavBar-->
+	<nav class="navbar navbar-expand-lg">
+		<div class="container-fluid">
+			<div class="col-6 d-flex justify-content-start">
+				<a class="navbar-brand" href="index.html">
+					<img src="icons\logo-no-background.png" alt="Logo" height="50px" />
+				</a>
+				<ul class="navbar-nav">
+					<li class="item nav-item">
+						<a class="nav-link" href="menu.html">Menu</a>
+					</li>
+					<li class="item nav-item">
+						<a class="nav-link" href="nosotros.html">Nuestra Tienda</a>
+					</li>
+					<li class="item nav-item">
+						<a class="nav-link" href="index.html#Novedades">Novedades</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="col-6 d-flex justify-content-end">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="#" style="padding-right: 30px;">
+							<img src="icons\user.png" alt="Account" height="30px">
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">
+							<img src="icons\shopping-cart.png" alt="Cart" height="30px">
+						</a>
+					</li>
+				</ul>
+				</di </div>
+	</nav>
+	<!--Carrusel-->
+	<div class="carrusel container-fluid">
+		<div id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true">
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+				<button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+				<button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+			</div>
+			<div class="carousel-inner w-100">
+				<div class="carousel-item active" style="background-color: #a52a2a; height:60vh;">
+					<div class="img-carrusel"
+						style="background-image: url(Carrusel/tempura.png); height: 60vh; background-repeat: no-repeat; background-position: center;">
+					</div>
+				</div>
+				<div class="carousel-item" style="background-color: #0D3457; height:60vh;">
+					<div class="img-carrusel"
+						style="background-image: url(Carrusel/ramen.png); height: 60vh; background-repeat: no-repeat; background-position: center;">
+					</div>
+				</div>
+				<div class="carousel-item" style="background-color: #F4CA02; height:60vh;">
+					<div class="img-carrusel"
+						style="background-image: url(Carrusel/nigiris.png); height: 60vh; background-repeat: no-repeat; background-position: center;">
+					</div>
+				</div>
+			</div>
+			<!-- Left and right controls/icons -->
+			<button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon"></span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+				<span class="carousel-control-next-icon"></span>
+			</button>
+		</div>
+	</div>
+
+	<!--Novedades y Tarjetas-->
+	<div id="novedades-y-tarjetas">
+
+		<!--Tarjetas-->
+		<div id="Novedades" class="tarjetas row justify-content-center">
+			<!--Novedades-->
+			<div class="row col-12">
+				<div class="nov col-6 d-flex justify-content-start">
+					<h2 class="letra-cafe">Novedades</h2>
+				</div>
+				<div class="nov col-6 d-flex justify-content-end">
+					<h2 class="letra-cafe">Ver todo</h2>
+				</div>
+			</div>
+			<!--Tarjetas-->
+			<div class="card" style="width: 20rem;">
+				<img src="images\tarjeta1.png" class="card-img-top" alt="Novedad: Ramen">
+				<div class="card-body">
+					<h2 class="card-title letra-cafe">Ramen</h2>
+					<p class="card-text letra-cafe">Fukusuke Sushi presenta en su menu el autentico Ramen oriental. Disponible
+						tanto para retiro como con Delivery. Podras disfrutar de este plato de fideos y caldo desde hoy.
+					</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+			<div class="card" style="width: 20rem;">
+				<img src="images\tarjeta1.png" class="card-img-top" alt="Novedad: Gohan">
+				<div class="card-body">
+					<h2 class="card-title letra-cafe">Gohan</h2>
+					<p class="card-text letra-cafe">El clasico Bowl de arroz blanco es la nueva novedad de Fukusuke Sushi.
+						Acompañalo con lo que desees, y disfruta del plato Japones mas imporante para el pais.</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+			<div class="card" style="width: 20rem;">
+				<img src="images\tarjeta1.png" class="card-img-top" alt="Novedad: Gohan">
+				<div class="card-body">
+					<h2 class="card-title letra-cafe">Gohan</h2>
+					<p class="card-text letra-cafe">El clasico Bowl de arroz blanco es la nueva novedad de Fukusuke Sushi.
+						Acompañalo con lo que desees, y disfruta del plato Japones mas imporante para el pais.</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+			<div class="card" style="width: 20rem;">
+				<img src="images\tarjeta1.png" class="card-img-top" alt="...">
+				<div class="card-body">
+					<h2 class="card-title letra-cafe">Hand Rolls</h2>
+					<p class="card-text letra-cafe">El clasico Hand Roll ahora esta disponible en Fukusuke Sushi, ordena una de
+						nuestras 3 variedades y disfrutalo con una salsa de soya de regalo.</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--Footer-->
+	<div class="">
+		<footer style="background-color: #a52a2a;">
+			<div class="container p-4">
+				<div class="row">
+					<div class="col-lg-6 col-md-12 mb-4">
+						<h1 style="color: white;">Fukusuke Sushi™</h1>
+					</div>
+					<div class="col-lg-3 col-md-6 mb-4">
+						<h5 class="mb-3" style="color: white;">Informacion</h5>
+						<ul class="list-unstyled mb-0">
+							<li class="mb-1">
+								<a href="nosotros.html" style="color: white;">Contactanos</a>
+							</li>
+							<li class="mb-1">
+								<a href="nosotros.html#FAQ" style="color: white;">Preguntas Frecuentes</a>
+							</li>
+							<li class="mb-1">
+								<a href="menu.html" style="color: white;">Menu</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-3 col-md-6 mb-4">
+						<h5 class="mb-1" style="color: white;">Horario de atencion</h5>
+						<table class="table" style="border-color: black;">
+							<tbody>
+								<tr>
+									<td>Lun-Vie:</td>
+									<td>12pm-11pm</td>
+								</tr>
+								<tr>
+									<td>Sab-Dom:</td>
+									<td>2pm-9pm</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); color: white;">
+				© 2023 Copyright: Fukusuke Sushi™
+			</div>
+			<!-- Copyright -->
+		</footer>
+	</div>
+</body>
+
+</html>
