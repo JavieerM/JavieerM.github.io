@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
+body {
+    background-color: #f7edd5;
+    font-family: 'Bubblegum Sans', cursive;
+}
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2vw;
+}
+.carrusel {
+    padding: 0;
+}
+.carousel-item{
+    text-align: center;
+}
+
+.blue {
+    margin: auto;
+    display: block;
+}
+.nov {
+    margin-top: 7vh;
+}
+.card {
+    margin: 2vw;
+    padding: 0;
+    border-radius: 25px;
+    background: transparent;
+    border: 0;
+}
+.card-body {
+    padding: 0;
+    margin-top: 2vw;
+}
+.card-img-top {
+    border-radius: 25px;
+}
+.tarjetas {
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+.letra-cafe {
+    color:#5d2417;
+}
+
+.titulo-menu {
+    text-align: center;
+}
+.margin-nav:hover {
+    margin-bottom: 5px;
+}
+
+#ramen-li:hover {
+    border-bottom: 2px solid #a52a2a;
+}
+#nigiris-li:hover {
+    border-bottom: 2px solid #a52a2a;
+}
+#gohan-li:hover {
+    border-bottom: 2px solid #a52a2a;
+}
+#rolls-li:hover {
+    border-bottom: 2px solid #a52a2a;
+}
+#tempuras-li:hover {
+    border-bottom: 2px solid #a52a2a;
+}
+.menu-item:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all .5s;
+}

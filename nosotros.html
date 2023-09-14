@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Fukusuke Sushi</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+	<!--NavBar-->
+	<nav class="navbar navbar-expand-lg">
+		<div class="container-fluid">
+			<div class="col-6 d-flex justify-content-start">
+				<a class="navbar-brand" href="index.html">
+					<img src="icons\logo-no-background.png" alt="Logo" height="50px" />
+				</a>
+				<ul class="navbar-nav">
+					<li class="item nav-item">
+						<a class="nav-link" href="menu.html">Menu</a>
+					</li>
+					<li class="item nav-item">
+						<a class="nav-link" href="nosotros.html">Nuestra Tienda</a>
+					</li>
+					<li class="item nav-item">
+						<a class="nav-link" href="index.html#Novedades">Novedades</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="col-6 d-flex justify-content-end">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="#" style="padding-right: 30px;">
+							<img src="icons\user.png" alt="Account" height="30px">
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">
+							<img src="icons\shopping-cart.png" alt="Cart" height="30px">
+						</a>
+					</li>
+				</ul>
+				</di </div>
+	</nav>
+
+    <!--Mapa y contacto-->
+    <div class="tarjetas row justify-content-center">
+
+        <!--Mapa-->
+        <div class="card" style="width: 45rem;">
+            <img src="images\mapa.png" class="card-img-top" alt="Mapa del restaurant">
+            <div class="card-body">
+                <p class="card-text letra-cafe">Estamos ubicados en: 19596 Ventura Blvd, Tarzana, CA. Visitanos cuando puedas!</p>
+            </div>
+        </div>
+
+        <!--Formulario de contacto-->
+        <!--NO CAMBIAR NADA. NOSE COMO FUNCIONA, PERO SE VE BONITO-->
+        <div class="card" style="width: 45rem;">
+            <section class="mb-4">
+                <h2 class="h1-responsive font-weight-bold text-center my-4">Contactanos!</h2>
+                <p class="text-center w-responsive mx-auto mb-5">No dudes en contactarnos si tienes alguna duda o queja. Estaremos felices de ayudarte</p>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-9 mb-md-0 mb-5">
+                        <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="md-form mb-0">
+                                        <label for="name" class="">Tu nombre</label>
+                                        <input type="text" id="name" name="name" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="md-form mb-0">
+                                        <label for="email" class="">To correo electronico</label>
+                                        <input type="text" id="email" name="email" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="md-form mb-0">
+                                        <label for="subject" class="">Asunto</label>
+                                        <input type="text" id="subject" name="subject" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="md-form">
+                                        <label for="message">Tu mensaje</label>
+                                        <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="text-center text-md-left">
+                            <a class="btn btn-primary" style="margin-top: 2vw;">Send</a>
+                        </div>
+                        <div class="status"></div>
+                    </div>
+                </div>
+            </section>    
+        </div>
+    </div>
+
+    <!--Preguntas Frecuentes-->
+    <div class="letra-cafe" style="padding: 5vw;">
+        <h1 id="FAQ" style="margin-bottom: 3vw;">Preguntas frecuentes</h1>
+        <ul>
+            <li>
+                <h3>Tienen servicio de Delivery?</h2>
+                <p>Si! El pedido llegara a la puerta de tu casa si deseas*</p>
+            </li>
+            <li>
+                <h3>Tienen mesas en el local?</h3>
+                <p>Nuestro restaurant ofrece tanto Delivery como un lugar para comer, asi que si. Si tenemos</p>
+            </li>
+            <li>
+                <h3>Medios de Pago</h3>
+                <p>Puedes realizar tus compras pagando online con Mach, Tarjeta de Crédito o Tarjeta de Débito utilizando Webpay.</p>
+            </li>
+        </ul>
+    </div>
+
+	<!--Footer-->
+	<div class="">
+		<footer style="background-color: #a52a2a;">
+			<div class="container p-4">
+				<div class="row">
+					<div class="col-lg-6 col-md-12 mb-4">
+						<h1 style="color: white;">Fukusuke Sushi™</h1>
+					</div>
+					<div class="col-lg-3 col-md-6 mb-4">
+						<h5 class="mb-3" style="color: white;">Informacion</h5>
+						<ul class="list-unstyled mb-0">
+							<li class="mb-1">
+								<a href="#!" style="color: white;">Contactanos</a>
+							</li>
+							<li class="mb-1">
+								<a href="#!" style="color: white;">Preguntas Frecuentes</a>
+							</li>
+							<li class="mb-1">
+								<a href="menu.html" style="color: white;">Menu</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-3 col-md-6 mb-4">
+						<h5 class="mb-1" style="color: white;">Horario de atencion</h5>
+						<table class="table" style="border-color: black;">
+							<tbody>
+								<tr>
+									<td>Lun-Vie:</td>
+									<td>12pm-11pm</td>
+								</tr>
+								<tr>
+									<td>Sab-Dom:</td>
+									<td>2pm-9pm</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); color: white;">
+				© 2023 Copyright: Fukusuke Sushi™
+			</div>
+			<!-- Copyright -->
+		</footer>
+	</div>
+</body>
+
+</html>
