@@ -40,7 +40,7 @@
 			<div>
 				<ul style="justify-content: start; list-style-type: none;">
 					<li style="margin-top: 2vh;" class="nav-item">
-						<button style="color: inherit; background: none; border: none; margin: 0; padding: 0;" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#loginModal">
+						<button style="color: inherit; background: none; border: none; margin: 0; padding: 0;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
 							Inicia Sesion
 						</button>
 					</li>
@@ -63,7 +63,7 @@
 		</div>
   	</div>
 	<!--Modal de Login-->
-	<div class="modal fade" id="loginModal">
+	<div class="modal fade in" id="loginModal">
 		<div class="modal-dialog modal-dialog-centered">
 		  <div style="background-color: whitesmoke; border-color: white;" class="modal-content">
 			<!-- Modal Header -->
@@ -106,7 +106,9 @@
 	<nav style="background-color: #f7edd5;" class="d-lg-none navbar navbar-expand-lg sticky-top">
 		<div class="container-fluid">
 			<div class="col-6 d-flex justify-content-start">
-				<img src="icons/logo-no-background.png" alt="Logo" height="50px" />
+				<a class="navbar-brand" href="index.html">
+					<img src="icons/logo-no-background.png" alt="Logo" height="50px" />
+				</a>
 			</div>
 			<div class="col-6 d-flex justify-content-end">
 				<button style="background: transparent; border: 0;" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#MenuCelulares">
