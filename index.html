@@ -11,7 +11,7 @@
 </head>
 
 <body>
-	<!-- Offcanvas Sidebar -->
+	<!-- Offcanvas Sidebar Carrito-->
 	<div style="background-color: #f7edd5;" class="offcanvas offcanvas-end" id="sidebarcart">
 		<div class="offcanvas-header">
 			<img src="icons\shopping-cart.png" alt="Cart" height="30px">
@@ -25,6 +25,38 @@
 			<div style="position: absolute; bottom: 0px;" class="pagar">
 				<h4>Subtotal: </h4>
 				<button style="width: 80%; background-color: #a52a2a; border-color: #a52a2a;" class="btn btn-secondary" type="button">Pagar!</button>
+			</div>
+		</div>
+  	</div>
+	<!-- Offcanvas Sidebar Menu Mobiles-->
+	<div style="background-color: #f7edd5;" class="offcanvas offcanvas-end" id="MenuCelulares">
+		<div style="margin-bottom: 3vh; border-bottom: 2px solid grey;" class="offcanvas-header">
+			<img src="icons/logo-no-background.png" alt="Cart" height="40em">
+	  		<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+		</div>
+		<div class="offcanvas-body">
+			<div>
+				<ul style="justify-content: start; list-style-type: none;">
+					<li style="margin-top: 2vh;" class="nav-item">
+						<button style="color: inherit; background: none; border: none; margin: 0; padding: 0;" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#loginModal">
+							Inicia Sesion
+						</button>
+					</li>
+					<li style="margin-top: 2vh;" class="nav-item">
+						<button style="color: inherit; background: none; border: none; margin: 0; padding: 0;" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarcart">
+							Carrito
+						</button>
+					</li>
+					<li style="margin-top: 2vh;" class="nav-item">
+						<a class="nav-link" href="menu.html">Menu</a>
+					</li>
+					<li style="margin-top: 2vh;" class="nav-item">
+						<a class="nav-link" href="nosotros.html">Nuestra Tienda</a>
+					</li>
+					<li style="margin-top: 2vh;" class="nav-item">
+						<a class="nav-link" href="index.html#Novedades">Novedades</a>
+					</li>
+				</ul>
 			</div>
 		</div>
   	</div>
@@ -68,8 +100,21 @@
 		  </div>
 		</div>
 	  </div>
-	<!--NavBar-->
-	<nav class="navbar navbar-expand-lg">
+	<!--NavBar Celulares-->
+	<nav style="background-color: #f7edd5;" class="d-lg-none navbar navbar-expand-lg sticky-top">
+		<div class="container-fluid">
+			<div class="col-6 d-flex justify-content-start">
+				<img src="icons/logo-no-background.png" alt="Logo" height="50px" />
+			</div>
+			<div class="col-6 d-flex justify-content-end">
+				<button style="background: transparent; border: 0;" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#MenuCelulares">
+					<img src="icons/more.png" alt="Cart" height="40em">
+				</button>
+			</div>
+		</div>
+	</nav>
+	<!--NavBar PC-->
+	<nav class="d-none d-lg-block navbar navbar-expand-lg">
 		<div class="container-fluid">
 			<div class="col-6 d-flex justify-content-start">
 				<a class="navbar-brand" href="index.html">
@@ -87,7 +132,6 @@
 					</li>
 				</ul>
 			</div>
-
 			<div class="col-6 d-flex justify-content-end">
 				<ul class="navbar-nav">
 					<li class="nav-item">
