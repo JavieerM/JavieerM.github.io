@@ -10,11 +10,15 @@ body {
     align-items: center;
     margin-left: 2vw;
 }
+
 .carrusel {
     padding: 0;
 }
 .carousel-item{
     text-align: center;
+}
+.pagar {
+    width: 100%;
 }
 
 .blue {
@@ -53,19 +57,7 @@ body {
     margin-bottom: 5px;
 }
 
-#ramen-li:hover {
-    border-bottom: 2px solid #a52a2a;
-}
-#nigiris-li:hover {
-    border-bottom: 2px solid #a52a2a;
-}
-#gohan-li:hover {
-    border-bottom: 2px solid #a52a2a;
-}
-#rolls-li:hover {
-    border-bottom: 2px solid #a52a2a;
-}
-#tempuras-li:hover {
+.lista:hover {
     border-bottom: 2px solid #a52a2a;
 }
 .menu-item:hover {
