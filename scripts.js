@@ -1,3 +1,4 @@
+//Formulario Registro Cliente
 const registerForm = document.getElementById('register-form');
 registerForm.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -12,7 +13,7 @@ registerForm.addEventListener('submit', async (e) => {
   console.log(data);
 });
 
-
+//Formulario Datos de Envio
 document.getElementById('datosEnvio').addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -30,5 +31,29 @@ document.getElementById('datosEnvio').addEventListener('submit', async (e) => {
   }).then (res => res.json())
   .then (data => console.log(data))
   .catch (err => console.log(err));
-// Add missing closing bracket
+});
+
+//Formulario Enviar correo
+
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('nameContact').value;
+  const email = document.getElementById('emailContact').value;
+  const subject = document.getElementById('subjectContact').value;
+  const message = document.getElementById('messageContact').value;
+  console.log(name, email, subject, message);
+
+  fetch('mail.php', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&subject=${encodeURIComponent(subject)}&message=${encodeURIComponent(message)}`
+  })
+  .then(response => response.text())
+  .then(data => console.log(data))
+  .catch((error) => {
+    console.error('Error:', error);
+  });
 });
