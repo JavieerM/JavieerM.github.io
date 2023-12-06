@@ -64,38 +64,40 @@
 			</div>
 		</div>
   	</div>
-	<!--Modal de Login-->
-	<div class="modal fade in" id="loginModal">
+	<!--Modal de Registro-->
+	<div class="modal fade in" id="registroModal">
 		<div class="modal-dialog modal-dialog-centered">
 		  <div style="background-color: whitesmoke; border-color: white;" class="modal-content">
 			<!-- Modal Header -->
 			<div class="modal-header">
-			  <h4 class="modal-title">Inicia Sesion</h4>
+			  <h4 class="modal-title">Registrate</h4>
 			  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
 			</div>
 			<!-- Modal body -->
 			<div class="modal-body">
 				<div class="myform">
-					<form action="#">
+					<form id="register-form" action="#">
 						<div class="mb-3 mt-3">
 							<label for="email">Correo Electronico</label>
-							<input type="email" class="form-control">
+							<input id="registerEmail" type="email" class="form-control" required>
 						</div>
 						<div class="mb-3 mt-3">
 							<label for="password">Contraseña</label>
-							<input type="password" class="form-control">
+							<input id="registerPassword" type="password" class="form-control" required>
 						</div>
 						<div class="row">
 							<div class="col-4 justify-content-start">
-								<button style="background-color:#a52a2a; color: white; border-color: black"  type="button" class="justify-content-start loginbutton btn mt-3">
-									Inicia Sesion
+								<button style="background-color:#a52a2a; color: white; border-color: black"  type="submit" class="justify-content-start loginbutton btn mt-3">
+									Registrate
 								</button>
 							</div>
 							<div class="col-4">
 								<br>
 							</div>
-							<div class="col-4 justify-content-end">
-								<a href="#" style="color: inherit; ">Registrate</a>
+							<div class="col-4 justify-content-start">
+								<button data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal" style="background-color:#a52a2a; color: white; border-color: black"  type="button" class="justify-content-start loginbutton btn mt-3">
+									Inicia Sesion
+								</button>
 							</div>
 						</div>
 					</form>
@@ -141,7 +143,7 @@
 			<div class="col-6 d-flex justify-content-end">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<button style="background: transparent; border: 0;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
+						<button style="background: transparent; border: 0;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registroModal">
 							<img src="icons/user.png" alt="Cart" height="30px">
 						</button>
 					</li>
@@ -292,7 +294,7 @@
 			<!-- Copyright -->
 		</footer>
 	</div>
-	<script src="index.js"></script>
+	<script src="scripts.js"></script>
 </body>
 
 </html>

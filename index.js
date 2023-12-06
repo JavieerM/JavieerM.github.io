@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const { response } = require("express");
 mongoose.connect("mongodb+srv://dbUser:wPkE66GW7KYIv0CS@instanciadesarrolloweb.gsu4aje.mongodb.net/?retryWrites=true&w=majority");
 
 const db = mongoose.connection;
@@ -16,6 +16,7 @@ const typeDefs = gql`
     email: String,
     address: String,
     phone: String,
+    password: String,
   }
   type Order {
     id: ID!,
@@ -25,7 +26,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addClient(name: String, lastName: String, email: String, address: String, phone: String): Client
+    addClient(name: String, lastName: String, email: String, address: String, phone: String, password: String): Client
     addOrder(date: String, client: ID!, status: String): Order
   }
 
@@ -42,7 +43,7 @@ const clientSchema = new mongoose.Schema({
   email: String,
   address: String,
   phone: String,
-  
+  password: String,
 });
 const Client = mongoose.model('Client', clientSchema);
 
@@ -64,8 +65,8 @@ const resolvers = {
     },
   },
   Mutation: {
-    addClient: async (_, { name, lastName, email, address, phone }) => {
-      const client = new Client({ name, lastName, email, address, phone });
+    addClient: async (_, { name, lastName, email, address, phone, password }) => {
+      const client = new Client({ name, lastName, email, address, phone, password });
       await client.save();
       return client;
     },
@@ -85,10 +86,7 @@ const resolvers = {
   },
 };
 
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-});
+const server = new ApolloServer({ typeDefs, resolvers });
 
 server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
