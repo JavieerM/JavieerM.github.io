@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Fukusuke Sushi</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://unpkg.com/apollo-boost@0.4.7"></script>
+  	<script src="https://unpkg.com/graphql-tag@2.10.3"></script>
+</head>
+<body>
+    <!-- Offcanvas Sidebar Carrito-->
+	<div style="background-color: #f7edd5;" class="offcanvas offcanvas-end" id="sidebarcart">
+		<div class="offcanvas-header">
+			<img src="icons\shopping-cart.png" alt="Cart" height="30px">
+	  		<h1 class="offcanvas-title">Carrito</h1>
+	  		<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+		</div>
+		<div style="justify-content: center;" class="offcanvas-body">
+			<div>
+				<div id="cart"></div>
+			</div>
+		</div>
+  	</div>
+	<!-- Offcanvas Sidebar Menu Mobiles-->
+	<div style="background-color: #f7edd5;" class="offcanvas offcanvas-end" id="MenuCelulares">
+		<div style="margin-bottom: 3vh; border-bottom: 2px solid grey;" class="offcanvas-header">
+			<a class="navbar-brand" href="index.html">
+				<img src="icons\logo-no-background.png" alt="Logo" height="50px" />
+			</a>
+	  		<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+		</div>
+		<div class="offcanvas-body">
+			<div>
+				<ul style="justify-content: start; list-style-type: none;">
+					<li style="margin-top: 2vh;" class="nav-item">
+						<button style="color: inherit; background: none; border: none; margin: 0; padding: 0;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
+							Inicia Sesion
+						</button>
+					</li>
+					<li style="margin-top: 2vh;" class="nav-item">
+						<button style="color: inherit; background: none; border: none; margin: 0; padding: 0;" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarcart">
+							Carrito
+						</button>
+					</li>
+					<li style="margin-top: 2vh;" class="nav-item">
+						<a class="nav-link" href="menu.html">Menu</a>
+					</li>
+					<li style="margin-top: 2vh;" class="nav-item">
+						<a class="nav-link" href="nosotros.html">Nuestra Tienda</a>
+					</li>
+					<li style="margin-top: 2vh;" class="nav-item">
+						<a class="nav-link" href="index.html#Novedades">Novedades</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+  	</div>
+    <!--NavBar Celulares-->
+	<nav style="background-color: #f7edd5;" class="d-lg-none navbar navbar-expand-lg sticky-top">
+		<div class="container-fluid">
+			<div class="col-6 d-flex justify-content-start">
+				<a class="navbar-brand" href="index.html">
+					<img src="icons/logo-no-background.png" alt="Logo" height="50px" />
+				</a>
+			</div>
+			<div class="col-6 d-flex justify-content-end">
+				<button style="background: transparent; border: 0;" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#MenuCelulares">
+					<img src="icons/more.png" alt="Cart" height="40em">
+				</button>
+			</div>
+		</div>
+	</nav>
+	<!--NavBar PC-->
+	<nav class="d-none d-lg-block navbar navbar-expand-lg">
+		<div class="container-fluid">
+			<div class="col-6 d-flex justify-content-start">
+				<a class="navbar-brand" href="index.html">
+					<img src="icons\logo-no-background.png" alt="Logo" height="50px" />
+				</a>
+				<ul class="navbar-nav">
+					<li class="item nav-item">
+						<a class="nav-link" href="menu.html">Menu</a>
+					</li>
+					<li class="item nav-item">
+						<a class="nav-link" href="nosotros.html">Nuestra Tienda</a>
+					</li>
+					<li class="item nav-item">
+						<a class="nav-link" href="index.html#Novedades">Novedades</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-6 d-flex justify-content-end">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<button style="background: transparent; border: 0;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registroModal">
+							<img src="icons/user.png" alt="Cart" height="30px">
+						</button>
+					</li>
+					<li class="nav-item">
+						<button style="background: transparent; border: 0;" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarcart">
+							<img src="icons/shopping-cart.png" alt="Cart" height="30px">
+						</button>
+					</li>
+				</ul>
+			</div>
+	</nav>
+    <!--Modal de Registro-->
+	<div class="modal fade in" id="registroModal">
+		<div class="modal-dialog modal-dialog-centered">
+		  <div style="background-color: whitesmoke; border-color: white;" class="modal-content">
+			<!-- Modal Header -->
+			<div class="modal-header">
+			  <h4 class="modal-title">Registrate</h4>
+			  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+			</div>
+			<!-- Modal body -->
+			<div class="modal-body">
+				<div class="myform">
+					<form id="register-form" action="#">
+						<div class="mb-3 mt-3">
+							<label for="email">Correo Electronico</label>
+							<input id="registerEmail" type="email" class="form-control" required>
+						</div>
+						<div class="mb-3 mt-3">
+							<label for="password">Contraseña</label>
+							<input id="registerPassword" type="password" class="form-control" required>
+						</div>
+						<div class="row">
+							<div class="col-4 justify-content-start">
+								<button style="background-color:#a52a2a; color: white; border-color: black"  type="submit" class="justify-content-start loginbutton btn mt-3">
+									Registrate
+								</button>
+							</div>
+							<div class="col-4">
+								<br>
+							</div>
+							<div class="col-4 justify-content-start">
+								<button data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal" style="background-color:#a52a2a; color: white; border-color: black"  type="button" class="justify-content-start loginbutton btn mt-3">
+									Inicia Sesion
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<!--Modal de Login-->
+	<div class="modal fade in" id="loginModal">
+		<div class="modal-dialog modal-dialog-centered">
+		  <div style="background-color: whitesmoke; border-color: white;" class="modal-content">
+			<!-- Modal Header -->
+			<div class="modal-header">
+			  <h4 class="modal-title">Inicia Sesion</h4>
+			  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+			</div>
+			<!-- Modal body -->
+			<div class="modal-body">
+				<div class="myform">
+					<form id="login-form" action="#">
+						<div class="mb-3 mt-3">
+							<label for="email">Correo Electronico</label>
+							<input id="loginEmail" type="email" class="form-control" required>
+						</div>
+						<div class="mb-3 mt-3">
+							<label for="password">Contraseña</label>
+							<input id="loginPassword" type="password" class="form-control" required>
+						</div>
+						<div class="row">
+							<div class="col-4 justify-content-start">
+								<button style="background-color:#a52a2a; color: white; border-color: black"  type="submit" class="justify-content-start loginbutton btn mt-3">
+									Inicia!
+								</button>
+							</div>
+							<div class="col-4">
+								<br>
+							</div>
+							<div class="col-4 justify-content-start">
+								<button data-bs-toggle="modal" data-bs-target="#registroModal" data-bs-dismiss="modal" style="background-color:#a52a2a; color: white; border-color: black"  type="button" class="justify-content-start loginbutton btn mt-3">
+									No tienes cuenta?
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		  </div>
+		</div>
+	</div>
+
+    <!--Contenido del carrito-->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center">Datos de envio</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <form id="datosEnvio" method="POST">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="idNombre" name="nombre" aria-describedby="nombreHelp">
+                        <div id="nombreHelp" class="form-text">Ingresa tu primer nombre</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="idApellido" name="nombre" aria-describedby="nombreHelp">
+                        <div id="nombreHelp" class="form-text">Ingresa tu Apellido</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="direccion" class="form-label">Direccion</label>
+                        <input type="text" class="form-control" id="idDireccion" name="direccion" aria-describedby="direccionHelp">
+                        <div id="direccionHelp" class="form-text">Ingresa tu direccion completa</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Telefono</label>
+                        <input type="text" class="form-control" id="idTelefono" name="telefono" aria-describedby="telefonoHelp">
+                        <div id="telefonoHelp" class="form-text">Ingresa tu numero de telefono</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo</label>
+                        <input type="email" class="form-control" id="idCorreo" name="correo" aria-describedby="correoHelp">
+                        <div id="correoHelp" class="form-text">Ingresa tu correo electronico</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="metodo" class="form-label">Metodo de pago</label>
+                        <select class="form-select" id="metodoPago" name="metodo" aria-describedby="metodoHelp">
+                            <option value="tarjeta">Tarjeta</option>
+                            <option value="tarjeta">Paypal</option>
+                        </select>
+                        <div id="metodoHelp" class="form-text">Selecciona el metodo de pago</div>
+                    </div>
+                    <!--Pay button-->
+                    <div class="mb-3">
+                        <button style="background-color:#a52a2a; color: white; border-color: #a52a2a; width: 100%"   type="submit"  class="btn btn-primary" id="payButton">Pagar</button>
+                    </div>
+                </form>
+    </div>
+    </div>
+    </div>
+
+    <!--Footer-->
+	<div class="">
+		<footer style="background-color: #a52a2a;">
+			<div class="container p-4">
+				<div class="row">
+					<div class="col-lg-6 col-md-12 mb-4">
+						<h1 style="color: white;">Fukusuke Sushi™</h1>
+					</div>
+					<div class="col-lg-3 menuBtn col-md-6 mb-4">
+						<h5 class="mb-3" style="color: white;">Informacion</h5>
+						<ul class="list-unstyled mb-0">
+							<li class="mb-1">
+								<a href="nosotros.html" style="color: white;">Contactanos</a>
+							</li>
+							<li class="mb-1">
+								<a href="nosotros.html#FAQ" style="color: white;">Preguntas Frecuentes</a>
+							</li>
+							<li class="mb-1">
+								<a href="menu.html" style="color: white;">Menu</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-3 col-md-6 mb-4">
+						<h5 class="mb-1" style="color: white;">Horario de atencion</h5>
+						<table class="table" style="border-color: black;">
+							<tbody>
+								<tr>
+									<td>Lun-Vie:</td>
+									<td>12pm-11pm</td>
+								</tr>
+								<tr>
+									<td>Sab-Dom:</td>
+									<td>2pm-9pm</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); color: white;">
+				© 2023 Copyright: Fukusuke Sushi™
+			</div>
+			<!-- Copyright -->
+		</footer>
+	</div>
+
+	<script src="scripts.js"></script>
+	<script src="cart.js"></script>
+</body>
+</html>

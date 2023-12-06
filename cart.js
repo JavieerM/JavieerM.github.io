@@ -1,4 +1,5 @@
-let cart = [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+updateCart();
 
 document.querySelectorAll('.menuBtn').forEach(button => {
     button.addEventListener('click', function (e) {
@@ -12,7 +13,8 @@ document.querySelectorAll('.menuBtn').forEach(button => {
         } else
         cart.push({ title, price, quantity: 1 });
 
-        console.log(cart);
+        localStorage.setItem('cart', JSON.stringify(cart));
+
         updateCart();
     });
 });
@@ -30,6 +32,7 @@ function updateCart() {
     document.querySelectorAll('.increase').forEach((button, index) => {
         button.addEventListener('click', function() {
           cart[index].quantity++;
+          localStorage.setItem('cart', JSON.stringify(cart));
           updateCart();
         });
      });
@@ -41,7 +44,8 @@ function updateCart() {
             } else {
             cart.splice(index, 1);
         }
-          updateCart();
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCart();
         });
     });
 }
