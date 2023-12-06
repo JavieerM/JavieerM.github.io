@@ -28,6 +28,7 @@ const typeDefs = gql`
   type Mutation {
     addClient(name: String, lastName: String, email: String, address: String, phone: String, password: String): Client
     addOrder(date: String, client: ID!, status: String): Order
+    login(email: String, password: String): Client
   }
 
   type Query {
@@ -86,7 +87,10 @@ const resolvers = {
   },
 };
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
 
 server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);

@@ -22,11 +22,10 @@
 		</div>
 		<div style="justify-content: center;" class="offcanvas-body">
 			<div>
-				<H1 style="color: #a52a2a; margin-top: 5vh;">Aun no tienes nada en tu carrito!</H1>
+				<div id="cart"></div>
 			</div>
 			<div style="position: absolute; bottom: 0px;" class="pagar">
-				<h4>Subtotal: </h4>
-				<button style="width: 80%; background-color: #a52a2a; border-color: #a52a2a;" class="btn btn-secondary" type="button">Pagar!</button>
+				<button onclick="location.href='https://paypal.me/JMejias44?country.x=CL&locale.x=es_XC'" style="width: 80%; background-color: #a52a2a; border-color: #a52a2a;" class="btn btn-secondary" type="button">Pagar!</button>
 			</div>
 		</div>
   	</div>
@@ -97,6 +96,48 @@
 							<div class="col-4 justify-content-start">
 								<button data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal" style="background-color:#a52a2a; color: white; border-color: black"  type="button" class="justify-content-start loginbutton btn mt-3">
 									Inicia Sesion
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	<!--Modal de Login-->
+	<div class="modal fade in" id="loginModal">
+		<div class="modal-dialog modal-dialog-centered">
+		  <div style="background-color: whitesmoke; border-color: white;" class="modal-content">
+			<!-- Modal Header -->
+			<div class="modal-header">
+			  <h4 class="modal-title">Inicia Sesion</h4>
+			  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+			</div>
+			<!-- Modal body -->
+			<div class="modal-body">
+				<div class="myform">
+					<form id="login-form" action="#">
+						<div class="mb-3 mt-3">
+							<label for="email">Correo Electronico</label>
+							<input id="loginEmail" type="email" class="form-control" required>
+						</div>
+						<div class="mb-3 mt-3">
+							<label for="password">Contraseña</label>
+							<input id="loginPassword" type="password" class="form-control" required>
+						</div>
+						<div class="row">
+							<div class="col-4 justify-content-start">
+								<button style="background-color:#a52a2a; color: white; border-color: black"  type="submit" class="justify-content-start loginbutton btn mt-3">
+									Inicia!
+								</button>
+							</div>
+							<div class="col-4">
+								<br>
+							</div>
+							<div class="col-4 justify-content-start">
+								<button data-bs-toggle="modal" data-bs-target="#registroModal" data-bs-dismiss="modal" style="background-color:#a52a2a; color: white; border-color: black"  type="button" class="justify-content-start loginbutton btn mt-3">
+									No tienes cuenta?
 								</button>
 							</div>
 						</div>
